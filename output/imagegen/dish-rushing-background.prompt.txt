@@ -1,4 +1,0 @@
-Use case: precise-object-edit.
-Edit target: the provided Dish Rushing main menu image.
-Create a background-only version of this exact Vietnamese restaurant kitchen image. Completely remove the entire "Dish Rushing" title, its outline/shadow and bowl/chopstick/steam logo ornament, and all four menu buttons including their text, outlines and shadows. Reconstruct the kitchen naturally in the areas they covered, continuing the window, dining area, walls, counters and tiled floor with coherent perspective.
-Preserve the original wide 16:9 composition, camera, boy washing dishes at the left sink, stacks of ceramic bowls, steaming pho pots at right, herb baskets, warm golden lighting and colors. Keep the same pixel art visual style with crisp pixel edges. Do not redesign the scene. No title, no letters, no UI, no buttons, no watermark anywhere. Opaque full-bleed kitchen background.
