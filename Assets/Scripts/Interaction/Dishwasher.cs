@@ -11,14 +11,21 @@ public class Dishwasher : MonoBehaviour, IInteractable
 
     public bool CanInteract(PlayerInteractor player)
     {
-        return player.HasDish && loadedDishes < capacity;
+        return player != null && !DishWashingMode.IsOpen;
     }
 
     public void Interact(PlayerInteractor player)
     {
-        player.RemoveDish();
-        loadedDishes++;
-        Debug.Log($"Dishwasher loaded: {loadedDishes}/{capacity}");
-        DishLoaded?.Invoke();
+        if (!CanInteract(player)) return;
+
+        if (player.HasDish && loadedDishes < capacity)
+        {
+            player.RemoveDish();
+            loadedDishes++;
+            DishLoaded?.Invoke();
+        }
+
+        // Reopening keeps the same dirty dish. Washing itself is a later task.
+        DishWashingMode.Open(player);
     }
 }

@@ -16,6 +16,9 @@ public class PlayerInteractor : MonoBehaviour
     private CircleCollider2D feetCollider;
     private ContactFilter2D filter;
     private int carriedDishes;
+    private int lastInteractionFrame = -1;
+    private InputAction interactAction;
+    private Collider2D currentTarget;
 
     public bool HasDish => carriedDishes > 0;
     public bool CanCarryMore => carriedDishes < maxCarriedDishes;
@@ -23,32 +26,62 @@ public class PlayerInteractor : MonoBehaviour
     private void Awake()
     {
         feetCollider = GetComponent<CircleCollider2D>();
+        if (interactableLayer.value == 0)
+            interactableLayer = LayerMask.GetMask("Interactable");
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null && playerInput.actions != null)
+            interactAction = playerInput.actions.FindAction("Player/Interact", false);
         filter = new ContactFilter2D();
         filter.SetLayerMask(interactableLayer);
         filter.useTriggers = true;
-        carriedDishVisual.SetActive(false);
+        if (carriedDishVisual != null) carriedDishVisual.SetActive(false);
     }
 
     private void Update()
     {
         Collider2D target = FindNearest(out _);
-        interactPrompt.SetActive(target != null);
-        if (target != null)
+        currentTarget = target;
+        if (interactPrompt != null) interactPrompt.SetActive(target != null);
+        if (target != null && interactPrompt != null)
         {
             interactPrompt.transform.position = target.transform.position + promptOffset;
         }
+        // Supports scenes where PlayerInput's UnityEvent has not been wired.
+        if (interactAction != null && interactAction.WasPressedThisFrame()) TryInteract();
+    }
+
+    private void OnDisable()
+    {
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 
     // Wired to the Player/Interact action on PlayerInput.
     public void Interact(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.performed || DishWashingMode.IsOpen)
         {
             return;
         }
 
+        TryInteract();
+    }
+
+    private void TryInteract()
+    {
+        if (!isActiveAndEnabled || DishWashingMode.IsOpen || lastInteractionFrame == Time.frameCount) return;
+        lastInteractionFrame = Time.frameCount;
         FindNearest(out IInteractable interactable);
         interactable?.Interact(this);
+    }
+
+    private void OnGUI()
+    {
+        if (DishWashingMode.IsOpen || currentTarget == null || interactPrompt != null) return;
+        var camera = Camera.main;
+        if (camera == null) return;
+        Vector3 p = camera.WorldToScreenPoint(currentTarget.transform.position + promptOffset);
+        if (p.z < 0) return;
+        GUI.Box(new Rect(p.x - 80, Screen.height - p.y - 18, 160, 32), "[E] Interact");
     }
 
     public void AddDish()
@@ -59,7 +92,7 @@ public class PlayerInteractor : MonoBehaviour
         }
 
         carriedDishes++;
-        carriedDishVisual.SetActive(true);
+        if (carriedDishVisual != null) carriedDishVisual.SetActive(true);
     }
 
     public void RemoveDish()
@@ -70,7 +103,7 @@ public class PlayerInteractor : MonoBehaviour
         }
 
         carriedDishes--;
-        carriedDishVisual.SetActive(HasDish);
+        if (carriedDishVisual != null) carriedDishVisual.SetActive(HasDish);
     }
 
     private Collider2D FindNearest(out IInteractable nearest)

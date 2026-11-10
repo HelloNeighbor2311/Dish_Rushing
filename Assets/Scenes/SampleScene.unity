@@ -181,6 +181,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1272813552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &180581021
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573883095315907417, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627612372156128912, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
+      propertyPath: m_Name
+      value: Dishwasher
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6660dd5bfdb1a7447bfe5902284af932, type: 3}
 --- !u!1 &208586983
 GameObject:
   m_ObjectHideFlags: 0
@@ -8644,6 +8701,7 @@ GameObject:
   - component: {fileID: 1913804160}
   - component: {fileID: 1913804162}
   - component: {fileID: 1913804163}
+  - component: {fileID: 1913804164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8841,6 +8899,26 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.77}
   m_Radius: 0.22
+--- !u!114 &1913804164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913804156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1a1f67656df0744bec3ac999b6b1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  interactPrompt: {fileID: 0}
+  carriedDishVisual: {fileID: 0}
+  promptOffset: {x: 0, y: 1, z: 0}
+  interactRadius: 1.2
+  maxCarriedDishes: 1
 --- !u!1 &2000074128
 GameObject:
   m_ObjectHideFlags: 0
@@ -9678,3 +9756,4 @@ SceneRoots:
   - {fileID: 231981292}
   - {fileID: 1168005817}
   - {fileID: 1272813552}
+  - {fileID: 180581021}
