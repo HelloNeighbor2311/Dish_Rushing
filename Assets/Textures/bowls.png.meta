@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 4ec9c94029c60734b881a49ac2084bee
+guid: da1c422a43f53094693a46c3774787a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7761345779914255073
-    second: high-score_0
+      213: -2724980517225569751
+    second: bowls_0
   - first:
-      213: 7836688881594275873
-    second: high-score_1
+      213: -6544099499207717667
+    second: bowls_1
   - first:
-      213: -7660799717493323830
-    second: high-score_2
+      213: -7317159388224108013
+    second: bowls_2
   - first:
-      213: 2905460804598949088
-    second: high-score_3
+      213: -6525567180968906698
+    second: bowls_3
   - first:
-      213: -8257934049629885977
-    second: high-score_4
+      213: -715509319663833281
+    second: bowls_4
   - first:
-      213: -3221567350464576418
-    second: high-score_5
-  - first:
-      213: 5046664159767756086
-    second: high-score_6
-  - first:
-      213: -1643132752620117618
-    second: high-score_7
-  - first:
-      213: -8123608490730747273
-    second: high-score_8
+      213: 8080895228575528621
+    second: bowls_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,17 +111,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: high-score_0
+      name: bowls_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 49
-        width: 9
-        height: 9
+        x: 15
+        y: 63
+        width: 34
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ea24ce8dd6d5bb60800000000000000
-      internalID: 7761345779914255073
+      spriteID: 922e8ea38acee2ad0800000000000000
+      internalID: -2724980517225569751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: high-score_1
+      name: bowls_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 51
-        width: 15
-        height: 13
+        x: 79
+        y: 63
+        width: 34
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1281eaa640381cc60800000000000000
-      internalID: 7836688881594275873
+      spriteID: ddc89e67d20be25a0800000000000000
+      internalID: -6544099499207717667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: high-score_2
+      name: bowls_2
       rect:
         serializedVersion: 2
-        x: 38
-        y: 51
-        width: 7
-        height: 10
+        x: 143
+        y: 63
+        width: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac7c56fde3f5fa590800000000000000
-      internalID: -7660799717493323830
+      spriteID: 31accfbed4a347a90800000000000000
+      internalID: -7317159388224108013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: high-score_3
+      name: bowls_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 49
-        width: 9
-        height: 9
+        x: 207
+        y: 63
+        width: 34
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +209,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e4e0fe3535425820800000000000000
-      internalID: 2905460804598949088
+      spriteID: 630b66c09378075a0800000000000000
+      internalID: -6525567180968906698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: high-score_4
+      name: bowls_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 271
+        y: 63
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fa4ff80100216f0800000000000000
+      internalID: -715509319663833281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_5
+      rect:
+        serializedVersion: 2
+        x: 15
         y: 0
-        width: 64
-        height: 48
+        width: 34
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,96 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e92539fbbce56d80800000000000000
-      internalID: -8257934049629885977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-score_5
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 41
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5400973091ba43d0800000000000000
-      internalID: -3221567350464576418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-score_6
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 41
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63df6af905a590640800000000000000
-      internalID: 5046664159767756086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-score_7
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 18
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e81a449977b6239e0800000000000000
-      internalID: -1643132752620117618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: high-score_8
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 18
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77a85af4e15234f80800000000000000
-      internalID: -8123608490730747273
+      spriteID: da6b46e556b152070800000000000000
+      internalID: 8080895228575528621
       vertices: []
       indices: 
       edges: []
@@ -335,15 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      high-score_0: 7761345779914255073
-      high-score_1: 7836688881594275873
-      high-score_2: -7660799717493323830
-      high-score_3: 2905460804598949088
-      high-score_4: -8257934049629885977
-      high-score_5: -3221567350464576418
-      high-score_6: 5046664159767756086
-      high-score_7: -1643132752620117618
-      high-score_8: -8123608490730747273
+      bowls_0: -2724980517225569751
+      bowls_1: -6544099499207717667
+      bowls_2: -7317159388224108013
+      bowls_3: -6525567180968906698
+      bowls_4: -715509319663833281
+      bowls_5: 8080895228575528621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

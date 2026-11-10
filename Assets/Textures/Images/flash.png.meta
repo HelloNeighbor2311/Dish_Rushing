@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a335281e82c7e4447b2b16b168c22c2c
+guid: ab3c0db848c048947883413007de8033
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8581363780399802525
-    second: clock_0
+      213: -8878624494578567007
+    second: flash_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clock_0
+      name: flash_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 24
+        width: 18
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d98222b64e0271770800000000000000
-      internalID: 8581363780399802525
+      spriteID: 1a8ff8a201ac8c480800000000000000
+      internalID: -8878624494578567007
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      clock_0: 8581363780399802525
+      flash_0: -8878624494578567007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

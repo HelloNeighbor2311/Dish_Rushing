@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a17fa2fdb92c6c4f886453ba001f471, type: 3}
+  m_Name: Bowl_4
+  m_EditorClassIdentifier: Assembly-CSharp::BowlSO
+  bowlCount: 4
+  sprite: {fileID: -2724980517225569751, guid: da1c422a43f53094693a46c3774787a5, type: 3}
