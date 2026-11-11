@@ -16,7 +16,7 @@ public class DishPickup : MonoBehaviour, IInteractable
 
     public bool CanInteract(PlayerInteractor player)
     {
-        return player.CanCarryMore;
+        return player.CanCarry(bowlCount);
     }
 
     public void Interact(PlayerInteractor player)

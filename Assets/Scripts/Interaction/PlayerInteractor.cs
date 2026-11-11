@@ -9,7 +9,7 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private GameObject carriedDishVisual;
     [SerializeField] private Vector3 promptOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private float interactRadius = 1.2f;
-    [SerializeField] private int maxCarriedDishes = 1;
+    [SerializeField] private int maxCarriedBowls = 10;
 
     private readonly List<Collider2D> hits = new List<Collider2D>();
     private readonly Dictionary<Collider2D, IInteractable> interactables = new Dictionary<Collider2D, IInteractable>();
@@ -22,7 +22,9 @@ public class PlayerInteractor : MonoBehaviour
     private Collider2D currentTarget;
 
     public bool HasDish => carriedDishes.Count > 0;
-    public bool CanCarryMore => carriedDishes.Count < maxCarriedDishes;
+    public int CarriedBowls { get; private set; }
+
+    public bool CanCarry(int bowls) => CarriedBowls + bowls <= maxCarriedBowls;
 
     private void Awake()
     {
@@ -91,12 +93,13 @@ public class PlayerInteractor : MonoBehaviour
 
     public void AddDish(DishPickup dish)
     {
-        if (!CanCarryMore)
+        if (!CanCarry(dish.BowlCount))
         {
             return;
         }
 
         carriedDishes.Add(dish);
+        CarriedBowls += dish.BowlCount;
         UpdateCarriedVisual();
     }
 
@@ -110,6 +113,7 @@ public class PlayerInteractor : MonoBehaviour
 
         DishPickup dish = carriedDishes[carriedDishes.Count - 1];
         carriedDishes.RemoveAt(carriedDishes.Count - 1);
+        CarriedBowls -= dish.BowlCount;
         UpdateCarriedVisual();
         return dish;
     }

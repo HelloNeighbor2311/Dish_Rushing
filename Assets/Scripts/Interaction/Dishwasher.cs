@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Dishwasher : MonoBehaviour, IInteractable
 {
-    [SerializeField] private int capacity = 1;
+    [SerializeField] private int bowlCapacity = 30;
 
     private int loadedDishes;
     private int loadedBowls;
@@ -19,13 +19,17 @@ public class Dishwasher : MonoBehaviour, IInteractable
     {
         if (!CanInteract(player)) return;
 
-        if (player.HasDish && loadedDishes < capacity)
+        // Unload everything the player carries, or nothing if it would overflow the machine.
+        if (player.HasDish && loadedBowls + player.CarriedBowls <= bowlCapacity)
         {
-            DishPickup dish = player.RemoveDish();
-            loadedDishes++;
-            loadedBowls += dish.BowlCount;
-            Debug.Log($"Dishwasher loaded: {loadedDishes}/{capacity} dish(es), {loadedBowls} bowl(s)");
-            DishLoaded?.Invoke();
+            while (player.HasDish)
+            {
+                DishPickup dish = player.RemoveDish();
+                loadedDishes++;
+                loadedBowls += dish.BowlCount;
+                DishLoaded?.Invoke();
+            }
+            Debug.Log($"Dishwasher loaded: {loadedDishes} dish(es), {loadedBowls}/{bowlCapacity} bowl(s)");
         }
 
         // Reopening keeps the same dirty dish. Washing itself is a later task.
