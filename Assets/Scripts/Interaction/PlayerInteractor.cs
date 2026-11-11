@@ -15,13 +15,14 @@ public class PlayerInteractor : MonoBehaviour
     private readonly Dictionary<Collider2D, IInteractable> interactables = new Dictionary<Collider2D, IInteractable>();
     private CircleCollider2D feetCollider;
     private ContactFilter2D filter;
-    private int carriedDishes;
+    private readonly List<DishPickup> carriedDishes = new List<DishPickup>();
+    private SpriteRenderer carriedDishRenderer;
     private int lastInteractionFrame = -1;
     private InputAction interactAction;
     private Collider2D currentTarget;
 
-    public bool HasDish => carriedDishes > 0;
-    public bool CanCarryMore => carriedDishes < maxCarriedDishes;
+    public bool HasDish => carriedDishes.Count > 0;
+    public bool CanCarryMore => carriedDishes.Count < maxCarriedDishes;
 
     private void Awake()
     {
@@ -34,7 +35,11 @@ public class PlayerInteractor : MonoBehaviour
         filter = new ContactFilter2D();
         filter.SetLayerMask(interactableLayer);
         filter.useTriggers = true;
-        if (carriedDishVisual != null) carriedDishVisual.SetActive(false);
+        if (carriedDishVisual != null)
+        {
+            carriedDishRenderer = carriedDishVisual.GetComponent<SpriteRenderer>();
+            carriedDishVisual.SetActive(false);
+        }
     }
 
     private void Update()
@@ -84,26 +89,39 @@ public class PlayerInteractor : MonoBehaviour
         GUI.Box(new Rect(p.x - 80, Screen.height - p.y - 18, 160, 32), "[E] Interact");
     }
 
-    public void AddDish()
+    public void AddDish(DishPickup dish)
     {
         if (!CanCarryMore)
         {
             return;
         }
 
-        carriedDishes++;
-        if (carriedDishVisual != null) carriedDishVisual.SetActive(true);
+        carriedDishes.Add(dish);
+        UpdateCarriedVisual();
     }
 
-    public void RemoveDish()
+    // Returns the most recently picked-up dish, or null when empty-handed.
+    public DishPickup RemoveDish()
     {
         if (!HasDish)
         {
-            return;
+            return null;
         }
 
-        carriedDishes--;
-        if (carriedDishVisual != null) carriedDishVisual.SetActive(HasDish);
+        DishPickup dish = carriedDishes[carriedDishes.Count - 1];
+        carriedDishes.RemoveAt(carriedDishes.Count - 1);
+        UpdateCarriedVisual();
+        return dish;
+    }
+
+    private void UpdateCarriedVisual()
+    {
+        if (carriedDishVisual == null) return;
+        carriedDishVisual.SetActive(HasDish);
+        if (HasDish && carriedDishRenderer != null)
+        {
+            carriedDishRenderer.sprite = carriedDishes[carriedDishes.Count - 1].Sprite;
+        }
     }
 
     private Collider2D FindNearest(out IInteractable nearest)

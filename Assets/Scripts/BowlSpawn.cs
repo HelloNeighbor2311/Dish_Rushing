@@ -28,7 +28,7 @@ public class BowlSpawn : MonoBehaviour
         Transform spawnPos = spawnPositions[Random.Range(0, spawnPositions.Count)];
 
         GameObject dishes = Instantiate(dishese, spawnPos);
-        dishes.GetComponent<SpriteRenderer>().sprite = bowl.sprite;
+        dishes.GetComponent<DishPickup>().Setup(bowl);
 
         spawnPositions.Remove(spawnPos);
         spawnCount--;    

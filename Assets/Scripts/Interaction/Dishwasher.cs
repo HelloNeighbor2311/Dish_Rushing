@@ -6,6 +6,7 @@ public class Dishwasher : MonoBehaviour, IInteractable
     [SerializeField] private int capacity = 1;
 
     private int loadedDishes;
+    private int loadedBowls;
 
     public event Action DishLoaded;
 
@@ -20,8 +21,10 @@ public class Dishwasher : MonoBehaviour, IInteractable
 
         if (player.HasDish && loadedDishes < capacity)
         {
-            player.RemoveDish();
+            DishPickup dish = player.RemoveDish();
             loadedDishes++;
+            loadedBowls += dish.BowlCount;
+            Debug.Log($"Dishwasher loaded: {loadedDishes}/{capacity} dish(es), {loadedBowls} bowl(s)");
             DishLoaded?.Invoke();
         }
 
