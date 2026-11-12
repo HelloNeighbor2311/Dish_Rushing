@@ -10,6 +10,7 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private Vector3 promptOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private float interactRadius = 1.2f;
     [SerializeField] private int maxCarriedBowls = 10;
+    [SerializeField] private List<Sprite> BowlSpritesList;
 
     private readonly List<Collider2D> hits = new List<Collider2D>();
     private readonly Dictionary<Collider2D, IInteractable> interactables = new Dictionary<Collider2D, IInteractable>();
@@ -100,6 +101,7 @@ public class PlayerInteractor : MonoBehaviour
 
         carriedDishes.Add(dish);
         CarriedBowls += dish.BowlCount;
+        Debug.Log(CarriedBowls);
         UpdateCarriedVisual();
     }
 
@@ -122,10 +124,16 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (carriedDishVisual == null) return;
         carriedDishVisual.SetActive(HasDish);
-        if (HasDish && carriedDishRenderer != null)
+        if (!HasDish || carriedDishRenderer == null) return;
+
+        int spriteIndex = CarriedBowls - 1;
+        if (BowlSpritesList == null || spriteIndex < 0 || spriteIndex >= BowlSpritesList.Count)
         {
-            carriedDishRenderer.sprite = carriedDishes[carriedDishes.Count - 1].Sprite;
+            Debug.LogWarning($"No carried visual configured for {CarriedBowls} bowl(s).");
+            return;
         }
+
+        carriedDishRenderer.sprite = BowlSpritesList[spriteIndex];
     }
 
     private Collider2D FindNearest(out IInteractable nearest)

@@ -131,12 +131,12 @@ TextureImporter:
       name: bowls_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 63
-        width: 34
-        height: 41
+        x: 16
+        y: 64
+        width: 32
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: bowls_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 63
-        width: 34
-        height: 27
+        x: 80
+        y: 64
+        width: 32
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: bowls_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 63
-        width: 34
-        height: 32
+        x: 144
+        y: 64
+        width: 32
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: bowls_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 63
-        width: 34
-        height: 38
+        x: 208
+        y: 64
+        width: 32
+        height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: bowls_4
       rect:
         serializedVersion: 2
-        x: 271
-        y: 63
-        width: 34
-        height: 46
+        x: 272
+        y: 64
+        width: 32
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: bowls_5
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 34
-        height: 51
+        width: 32
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,11 +259,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bowls_6
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 61
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c2352601e580c4db4d58b68779104f
+      internalID: -1475912692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29cf1f990192894b8b3013008f5956d
+      internalID: 1347478735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_8
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 61
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3313b650b792e58438a65001c30ab99e
+      internalID: 1110369615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_9
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92abf224f64e09b42949c680abebd500
+      internalID: -593211622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9dafbcaaf0538c049ade1191e4dbb036
     internalID: 0
     vertices: []
     indices: 
@@ -271,7 +359,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       bowls_0: -2724980517225569751
       bowls_1: -6544099499207717667
@@ -279,6 +369,10 @@ TextureImporter:
       bowls_3: -6525567180968906698
       bowls_4: -715509319663833281
       bowls_5: 8080895228575528621
+      bowls_6: -1475912692
+      bowls_7: 1347478735
+      bowls_8: 1110369615
+      bowls_9: -593211622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
