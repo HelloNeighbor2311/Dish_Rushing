@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bowl_4
   m_EditorClassIdentifier: Assembly-CSharp::BowlSO
   bowlCount: 4
-  sprite: {fileID: -2724980517225569751, guid: da1c422a43f53094693a46c3774787a5, type: 3}
+  sprite: {fileID: -6525567180968906698, guid: da1c422a43f53094693a46c3774787a5, type: 3}
