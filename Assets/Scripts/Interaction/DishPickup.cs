@@ -12,6 +12,7 @@ public class DishPickup : MonoBehaviour, IInteractable
     {
         bowlCount = bowl.bowlCount;
         GetComponent<SpriteRenderer>().sprite = bowl.sprite;
+        if (GameManager.Instance != null) GameManager.Instance.BowlsSpawned(bowlCount);
     }
 
     public bool CanInteract(PlayerInteractor player)

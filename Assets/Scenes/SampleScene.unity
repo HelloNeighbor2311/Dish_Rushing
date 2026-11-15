@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 315705920}
   - component: {fileID: 315705919}
   - component: {fileID: 315705918}
+  - component: {fileID: 315705922}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -668,6 +669,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &315705922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315705917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b71dbaab4c8a34aa111c586f6472ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HudStats
+  moneyText: {fileID: 1377504584}
+  needWashingText: {fileID: 2022273463}
 --- !u!1 &326585563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,6 +3699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 868152838}
+  - component: {fileID: 868152839}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3706,6 +3722,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2025390954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868152839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868152837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6eb4796fce8f94fa63779538cd2969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  cleanReward: 5
+  dirtyPenalty: 3
 --- !u!1 &911473297
 GameObject:
   m_ObjectHideFlags: 0
