@@ -19,12 +19,16 @@ public class PlayerInteractor : MonoBehaviour
     private int lastInteractionFrame = -1;
     private InputAction interactAction;
     private Collider2D currentTarget;
+    private Player player;
 
     public bool HasDish => carriedDishes > 0;
-    public bool CanCarryMore => carriedDishes < maxCarriedDishes;
+    public int CarriedDishes => carriedDishes;
+    public bool CanCarryMore => carriedDishes < maxCarriedDishes &&
+        (player == null || player.HasStamina);
 
     private void Awake()
     {
+        player = GetComponent<Player>();
         feetCollider = GetComponent<CircleCollider2D>();
         if (interactableLayer.value == 0)
             interactableLayer = LayerMask.GetMask("Interactable");
