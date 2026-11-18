@@ -22,18 +22,14 @@ public class PlayerInteractor : MonoBehaviour
     private int lastInteractionFrame = -1;
     private InputAction interactAction;
     private Collider2D currentTarget;
-    private Player player;
 
     public bool HasDish => carriedDishes.Count > 0;
     public int CarriedBowls { get; private set; }
 
     public bool CanCarry(int bowls) => CarriedBowls + bowls <= maxCarriedBowls;
-    public int CarriedDishes => carriedDishes.Count;
-    public bool CanCarryMore => CanCarry(1) && (player == null || player.HasStamina);
 
     private void Awake()
     {
-        player = GetComponent<Player>();
         feetCollider = GetComponent<CircleCollider2D>();
         if (interactableLayer.value == 0)
             interactableLayer = LayerMask.GetMask("Interactable");
