@@ -1347,13 +1347,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482293461}
+  - component: {fileID: 482293462}
   m_Layer: 5
   m_Name: PauseUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &482293461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1374,6 +1375,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &482293462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482293460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628545af328a50b44ac524add6afefed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseUI
+  continueBtn: {fileID: 735214874}
+  settingBtn: {fileID: 485250020}
+  ExitBtn: {fileID: 1667948271}
 --- !u!1 &485250018
 GameObject:
   m_ObjectHideFlags: 0
@@ -9868,7 +9884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: cd9280cff6385084685c37219eba445e, type: 3}
   m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 1885143202}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []

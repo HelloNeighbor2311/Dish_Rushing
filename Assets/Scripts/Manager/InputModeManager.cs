@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,11 +10,12 @@ public class InputModeManager : MonoBehaviour
     [Header("Action Maps")]
     [SerializeField] private string gameplayMap = "Player";
     [SerializeField] private string uiMap = "UI";
-
+    public static InputModeManager instance;
     public bool IsUIMode { get; private set; }
 
     private void Awake()
     {
+        instance = this;
         if (playerInput == null)
         {
             Debug.LogError("PlayerInput is missing!");
@@ -22,7 +24,26 @@ public class InputModeManager : MonoBehaviour
 
         EnterGameplayMode();
     }
+    private void Start()
+    {
+        GameInput.instance.PausePressed += OnPausePressed;
+    }
 
+    private void OnPausePressed()
+    {
+        SwitchMode();
+    }
+    public void SwitchMode()
+    {
+        if (!IsUIMode)
+        {
+            EnterUIMode();
+        }
+        else
+        {
+            EnterGameplayMode();
+        }
+    }
     public void EnterGameplayMode()
     {
         if (playerInput == null) return;
