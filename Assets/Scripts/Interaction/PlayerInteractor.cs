@@ -22,15 +22,19 @@ public class PlayerInteractor : MonoBehaviour
     private int lastInteractionFrame = -1;
     private InputAction interactAction;
     private Collider2D currentTarget;
+    private Player movement;
 
     public bool HasDish => carriedDishes.Count > 0;
     public int CarriedBowls { get; private set; }
 
-    public bool CanCarry(int bowls) => CarriedBowls + bowls <= maxCarriedBowls;
+    public int MaxCarriedBowls => maxCarriedBowls;
+    public bool CanCarry(int bowls) => bowls > 0 && CarriedBowls + bowls <= maxCarriedBowls &&
+        (movement == null || movement.CanLiftBowls);
 
     private void Awake()
     {
         feetCollider = GetComponent<CircleCollider2D>();
+        movement = GetComponent<Player>();
         if (interactableLayer.value == 0)
             interactableLayer = LayerMask.GetMask("Interactable");
         var playerInput = GetComponent<PlayerInput>();
@@ -71,6 +75,26 @@ public class PlayerInteractor : MonoBehaviour
     private void OnDisable()
     {
         if (interactPrompt != null) interactPrompt.SetActive(false);
+    }
+    private void OnDestroy()
+    {
+        if (GameInput.instance != null) GameInput.instance.InteractPressed -= OnInteractPressed;
+    }
+
+    // A pickup can contain multiple bowls. Exhaustion removes exactly one bowl.
+    public bool BreakOneBowl()
+    {
+        if (!HasDish) return false;
+        DishPickup dish = carriedDishes[carriedDishes.Count - 1];
+        if (!dish.RemoveOneBowl()) return false;
+        CarriedBowls--;
+        if (dish.BowlCount == 0)
+        {
+            carriedDishes.RemoveAt(carriedDishes.Count - 1);
+            Destroy(dish.gameObject);
+        }
+        UpdateCarriedVisual();
+        return true;
     }
     private void TryInteract()
     {

@@ -7,6 +7,13 @@ public class DishPickup : MonoBehaviour, IInteractable
     public int BowlCount => bowlCount;
     public Sprite Sprite => GetComponent<SpriteRenderer>().sprite;
 
+    public bool RemoveOneBowl()
+    {
+        if (bowlCount <= 0) return false;
+        bowlCount--;
+        return true;
+    }
+
     // Called by BowlSpawn right after Instantiate.
     public void Setup(BowlSO bowl)
     {

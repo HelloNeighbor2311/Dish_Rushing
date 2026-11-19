@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int cleanReward = 5;
     [SerializeField] private int dirtyPenalty = 3;
+    [SerializeField, Min(0)] private int brokenPenalty = 3;
 
     public event Action onGamePause;
     public event Action onGameUnPause;
     public int Money { get; private set; }
     public int BowlsToWash { get; private set; }
+    public int BrokenBowls { get; private set; }
 
     public event Action Changed;
 
@@ -44,6 +46,15 @@ public class GameManager : MonoBehaviour
         BowlsToWash = Mathf.Max(0, BowlsToWash - 1);
         Changed?.Invoke();
         return Money - before;
+    }
+
+    public void BowlBroken()
+    {
+        BrokenBowls++;
+        Money = Mathf.Max(0, Money - brokenPenalty);
+        // Broken bowls leave the unwashed inventory, keeping HUD counts consistent.
+        BowlsToWash = Mathf.Max(0, BowlsToWash - 1);
+        Changed?.Invoke();
     }
     public void PauseUnpauseGame()
     {
