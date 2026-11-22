@@ -69,10 +69,13 @@ public class Player : MonoBehaviour
             return;
         }
         stamina = Mathf.Max(0f, stamina - drainPerBowl * bowls * seconds);
-        if (stamina <= 0f && dropCooldown <= 0f && interactor.BreakOneBowl())
+        int brokenBowls = stamina <= 0f && dropCooldown <= 0f
+            ? interactor.BreakBowls()
+            : 0;
+        if (brokenBowls > 0)
         {
             dropCooldown = exhaustedDropInterval;
-            if (GameManager.Instance != null) GameManager.Instance.BowlBroken();
+            if (GameManager.Instance != null) GameManager.Instance.BowlBroken(brokenBowls);
         }
     }
 

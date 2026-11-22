@@ -6,11 +6,10 @@ public class DishPickup : MonoBehaviour, IInteractable
 
     public int BowlCount => bowlCount;
     public Sprite Sprite => GetComponent<SpriteRenderer>().sprite;
-
-    public bool RemoveOneBowl()
+    public bool RemoveBowls(int count)
     {
-        if (bowlCount <= 0) return false;
-        bowlCount--;
+        if (count <= 0 || count > bowlCount) return false;
+        bowlCount -= count;
         return true;
     }
 

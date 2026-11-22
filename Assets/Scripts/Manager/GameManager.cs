@@ -48,12 +48,15 @@ public class GameManager : MonoBehaviour
         return Money - before;
     }
 
-    public void BowlBroken()
+    public void BowlBroken(int count = 1)
     {
-        BrokenBowls++;
-        Money = Mathf.Max(0, Money - brokenPenalty);
+        count = Mathf.Max(0, count);
+        if (count == 0) return;
+
+        BrokenBowls += count;
+        Money = Mathf.Max(0, Money - brokenPenalty * count);
         // Broken bowls leave the unwashed inventory, keeping HUD counts consistent.
-        BowlsToWash = Mathf.Max(0, BowlsToWash - 1);
+        BowlsToWash = Mathf.Max(0, BowlsToWash - count);
         Changed?.Invoke();
     }
     public void PauseUnpauseGame()

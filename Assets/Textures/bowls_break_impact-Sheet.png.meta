@@ -1,0 +1,695 @@
+fileFormatVersion: 2
+guid: b95ff8f6489b43f45ad104305dfb101a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6297233536815430943
+    second: bowls_break_impact-Sheet_0
+  - first:
+      213: 1800345404487467600
+    second: bowls_break_impact-Sheet_1
+  - first:
+      213: -140398161235025657
+    second: bowls_break_impact-Sheet_2
+  - first:
+      213: 9145826985378171020
+    second: bowls_break_impact-Sheet_3
+  - first:
+      213: 3944756670028085199
+    second: bowls_break_impact-Sheet_4
+  - first:
+      213: -2282240637684677477
+    second: bowls_break_impact-Sheet_5
+  - first:
+      213: -2827528545739302703
+    second: bowls_break_impact-Sheet_6
+  - first:
+      213: 4585148468197231755
+    second: bowls_break_impact-Sheet_7
+  - first:
+      213: 5669892306814564572
+    second: bowls_break_impact-Sheet_8
+  - first:
+      213: 2008493271691551354
+    second: bowls_break_impact-Sheet_9
+  - first:
+      213: 5801517685252990994
+    second: bowls_break_impact-Sheet_10
+  - first:
+      213: -325504732025214765
+    second: bowls_break_impact-Sheet_11
+  - first:
+      213: -51390806553052010
+    second: bowls_break_impact-Sheet_12
+  - first:
+      213: 2557776296746768277
+    second: bowls_break_impact-Sheet_13
+  - first:
+      213: -1700045432344842991
+    second: bowls_break_impact-Sheet_14
+  - first:
+      213: 452213116310500114
+    second: bowls_break_impact-Sheet_15
+  - first:
+      213: -578504018153008134
+    second: bowls_break_impact-Sheet_16
+  - first:
+      213: 6324923593054747126
+    second: bowls_break_impact-Sheet_17
+  - first:
+      213: 552776096469336910
+    second: bowls_break_impact-Sheet_18
+  - first:
+      213: 3754352314152242130
+    second: bowls_break_impact-Sheet_19
+  - first:
+      213: 7565631863399116348
+    second: bowls_break_impact-Sheet_20
+  - first:
+      213: -138746715694471173
+    second: bowls_break_impact-Sheet_21
+  - first:
+      213: 6062916098093890071
+    second: bowls_break_impact-Sheet_22
+  - first:
+      213: 8129934512767511761
+    second: bowls_break_impact-Sheet_23
+  - first:
+      213: -2352241131360786778
+    second: bowls_break_impact-Sheet_24
+  - first:
+      213: 3471889458737306542
+    second: bowls_break_impact-Sheet_25
+  - first:
+      213: -5789275364959920655
+    second: bowls_break_impact-Sheet_26
+  - first:
+      213: 4840386593810039159
+    second: bowls_break_impact-Sheet_27
+  - first:
+      213: 88373569361491125
+    second: bowls_break_impact-Sheet_28
+  - first:
+      213: -554068908378812919
+    second: bowls_break_impact-Sheet_29
+  - first:
+      213: 3370795875135183453
+    second: bowls_break_impact-Sheet_30
+  - first:
+      213: -2415266760962361385
+    second: bowls_break_impact-Sheet_31
+  - first:
+      213: -3798582941272295690
+    second: bowls_break_impact-Sheet_32
+  - first:
+      213: 2293962189534912693
+    second: bowls_break_impact-Sheet_33
+  - first:
+      213: 3460930754247094439
+    second: bowls_break_impact-Sheet_34
+  - first:
+      213: 5741069431170210655
+    second: bowls_break_impact-Sheet_35
+  - first:
+      213: -6477486512992108413
+    second: bowls_break_impact-Sheet_36
+  - first:
+      213: -6992928899638789221
+    second: bowls_break_impact-Sheet_37
+  - first:
+      213: 4252778445676701083
+    second: bowls_break_impact-Sheet_38
+  - first:
+      213: 1176494866476637679
+    second: bowls_break_impact-Sheet_39
+  - first:
+      213: -398081852947150313
+    second: bowls_break_impact-Sheet_40
+  - first:
+      213: -1785320074514884824
+    second: bowls_break_impact-Sheet_41
+  - first:
+      213: -788720544640015995
+    second: bowls_break_impact-Sheet_42
+  - first:
+      213: 6002718179353627021
+    second: bowls_break_impact-Sheet_43
+  - first:
+      213: -7442890127464782545
+    second: bowls_break_impact-Sheet_44
+  - first:
+      213: 8648150760522749693
+    second: bowls_break_impact-Sheet_45
+  - first:
+      213: -2419832054846398773
+    second: bowls_break_impact-Sheet_46
+  - first:
+      213: 2746700698378829708
+    second: bowls_break_impact-Sheet_47
+  - first:
+      213: 1665404577256196825
+    second: bowls_break_impact-Sheet_48
+  - first:
+      213: 620855280439255044
+    second: bowls_break_impact-Sheet_49
+  - first:
+      213: 2537161774513727952
+    second: bowls_break_impact-Sheet_50
+  - first:
+      213: -1705864949634786068
+    second: bowls_break_impact-Sheet_51
+  - first:
+      213: -4543259307689175165
+    second: bowls_break_impact-Sheet_52
+  - first:
+      213: -2370804504469781548
+    second: bowls_break_impact-Sheet_53
+  - first:
+      213: -4496728623918783797
+    second: bowls_break_impact-Sheet_54
+  - first:
+      213: 6731680499128634952
+    second: bowls_break_impact-Sheet_55
+  - first:
+      213: -4528799359804099602
+    second: bowls_break_impact-Sheet_56
+  - first:
+      213: -1117972962085864709
+    second: bowls_break_impact-Sheet_57
+  - first:
+      213: -3775171678927410823
+    second: bowls_break_impact-Sheet_58
+  - first:
+      213: -4405825730328514717
+    second: bowls_break_impact-Sheet_59
+  - first:
+      213: -106405630308679433
+    second: bowls_break_impact-Sheet_60
+  - first:
+      213: -2246076496582079010
+    second: bowls_break_impact-Sheet_61
+  - first:
+      213: -8118418711084998683
+    second: bowls_break_impact-Sheet_62
+  - first:
+      213: 8450207568898045367
+    second: bowls_break_impact-Sheet_63
+  - first:
+      213: -4025980504732633222
+    second: bowls_break_impact-Sheet_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d7f8d9984446750800000000000000
+      internalID: 6297233536815430943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0528b735b9c1cf810800000000000000
+      internalID: 1800345404487467600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701e770cd943d0ef0800000000000000
+      internalID: -140398161235025657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88c5a0cf218cee70800000000000000
+      internalID: 9145826985378171020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7706a8a479eb630800000000000000
+      internalID: 3944756670028085199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9408da5b3ad350e0800000000000000
+      internalID: -2282240637684677477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d89eeeb4c992c8d0800000000000000
+      internalID: -2827528545739302703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c82591d38b1af30800000000000000
+      internalID: 4585148468197231755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8f66e33018fae40800000000000000
+      internalID: 5669892306814564572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72efe83df99fdb10800000000000000
+      internalID: 2008493271691551354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218a6a3d891238050800000000000000
+      internalID: 5801517685252990994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8adeabb239b7bf0800000000000000
+      internalID: -325504732025214765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c3fae655c694ff0800000000000000
+      internalID: -51390806553052010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597518e7dfb0f7320800000000000000
+      internalID: 2557776296746768277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d6f0fbfa93868e0800000000000000
+      internalID: -1700045432344842991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bowls_break_impact-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213b570fe65964600800000000000000
+      internalID: 452213116310500114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 93bb445b318833d4dab7be7783fe1e52
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      bowls_break_impact-Sheet_0: 6297233536815430943
+      bowls_break_impact-Sheet_1: 1800345404487467600
+      bowls_break_impact-Sheet_10: 5801517685252990994
+      bowls_break_impact-Sheet_11: -325504732025214765
+      bowls_break_impact-Sheet_12: -51390806553052010
+      bowls_break_impact-Sheet_13: 2557776296746768277
+      bowls_break_impact-Sheet_14: -1700045432344842991
+      bowls_break_impact-Sheet_15: 452213116310500114
+      bowls_break_impact-Sheet_2: -140398161235025657
+      bowls_break_impact-Sheet_3: 9145826985378171020
+      bowls_break_impact-Sheet_4: 3944756670028085199
+      bowls_break_impact-Sheet_5: -2282240637684677477
+      bowls_break_impact-Sheet_6: -2827528545739302703
+      bowls_break_impact-Sheet_7: 4585148468197231755
+      bowls_break_impact-Sheet_8: 5669892306814564572
+      bowls_break_impact-Sheet_9: 2008493271691551354
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

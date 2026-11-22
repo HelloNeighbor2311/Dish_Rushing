@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,10 @@ public class PlayerInteractor : MonoBehaviour
     private ContactFilter2D filter;
     private readonly List<DishPickup> carriedDishes = new List<DishPickup>();
     private SpriteRenderer carriedDishRenderer;
+    private Animator carriedDishAnimator;
+    private Vector3 carryPosition;
+    private bool playingBowlBreak;
+    private static readonly int BowlBreakState = Animator.StringToHash("Base Layer.BowlsBreak");
     private int lastInteractionFrame = -1;
     private InputAction interactAction;
     private Collider2D currentTarget;
@@ -46,6 +51,9 @@ public class PlayerInteractor : MonoBehaviour
         if (carriedDishVisual != null)
         {
             carriedDishRenderer = carriedDishVisual.GetComponent<SpriteRenderer>();
+            carryPosition = carriedDishVisual.transform.localPosition;
+            carriedDishAnimator = carriedDishVisual.GetComponent<Animator>();
+            if (carriedDishAnimator != null) carriedDishAnimator.enabled = false;
             carriedDishVisual.SetActive(false);
         }
     }
@@ -74,6 +82,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnDisable()
     {
+        if (playingBowlBreak) FinishBowlBreak();
         if (interactPrompt != null) interactPrompt.SetActive(false);
     }
     private void OnDestroy()
@@ -81,20 +90,67 @@ public class PlayerInteractor : MonoBehaviour
         if (GameInput.instance != null) GameInput.instance.InteractPressed -= OnInteractPressed;
     }
 
-    // A pickup can contain multiple bowls. Exhaustion removes exactly one bowl.
-    public bool BreakOneBowl()
+    public int BreakBowls()
     {
-        if (!HasDish) return false;
-        DishPickup dish = carriedDishes[carriedDishes.Count - 1];
-        if (!dish.RemoveOneBowl()) return false;
-        CarriedBowls--;
-        if (dish.BowlCount == 0)
+        if (!HasDish) return 0;
+
+        int brokenCount = UnityEngine.Random.Range(1, CarriedBowls + 1);
+        int remaining = brokenCount;
+
+        for (int i = carriedDishes.Count - 1; i >= 0 && remaining > 0; i--)
         {
-            carriedDishes.RemoveAt(carriedDishes.Count - 1);
-            Destroy(dish.gameObject);
+            DishPickup dish = carriedDishes[i];
+            int removeCount = Mathf.Min(remaining, dish.BowlCount);
+            if (!dish.RemoveBowls(removeCount))
+            {
+                continue;
+            }
+
+            remaining -= removeCount;
+            if (dish.BowlCount == 0)
+            {
+                carriedDishes.RemoveAt(i);
+                Destroy(dish.gameObject);
+            }
         }
+
+        int actualBrokenCount = brokenCount - remaining;
+        CarriedBowls -= actualBrokenCount;
+        if (actualBrokenCount <= 0) return 0;
+
+        PlayBowlBreak();
+        return actualBrokenCount;
+    }
+
+    private void PlayBowlBreak()
+    {
+        if (carriedDishAnimator == null)
+        {
+            UpdateCarriedVisual();
+            return;
+        }
+
+        carriedDishVisual.SetActive(true);
+        carriedDishAnimator.enabled = true;
+        playingBowlBreak = true;
+        carriedDishAnimator.Play(BowlBreakState, 0, 0f);
+        carriedDishAnimator.Update(0f);
+    }
+
+    private void LateUpdate()
+    {
+        if (!playingBowlBreak) return;
+        AnimatorStateInfo state = carriedDishAnimator.GetCurrentAnimatorStateInfo(0);
+        if (state.fullPathHash != BowlBreakState || state.normalizedTime >= 1f)
+            FinishBowlBreak();
+    }
+
+    private void FinishBowlBreak()
+    {
+        playingBowlBreak = false;
+        carriedDishAnimator.enabled = false;
+        carriedDishVisual.transform.localPosition = carryPosition;
         UpdateCarriedVisual();
-        return true;
     }
     private void TryInteract()
     {
@@ -144,7 +200,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void UpdateCarriedVisual()
     {
-        if (carriedDishVisual == null) return;
+        if (carriedDishVisual == null || playingBowlBreak) return;
         carriedDishVisual.SetActive(HasDish);
         if (!HasDish || carriedDishRenderer == null) return;
 
