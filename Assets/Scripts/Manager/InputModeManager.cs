@@ -24,15 +24,6 @@ public class InputModeManager : MonoBehaviour
 
         EnterGameplayMode();
     }
-    private void Start()
-    {
-        GameInput.instance.PausePressed += OnPausePressed;
-    }
-
-    private void OnPausePressed()
-    {
-        SwitchMode();
-    }
     public void SwitchMode()
     {
         if (!IsUIMode)

@@ -22,15 +22,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
-    private void Start()
-    {
-        GameInput.instance.PausePressed += OnPausePressed;
-    }
-
-    private void OnPausePressed()
-    {
-        PauseUnpauseGame();
-    }
 
     public void BowlsSpawned(int count)
     {
