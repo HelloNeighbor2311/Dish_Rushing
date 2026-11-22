@@ -1,33 +1,46 @@
 # Chế độ rửa bát
 
-Phạm vi: khi tương tác máy rửa bát, mở giao diện cận cảnh bát bẩn.
-Chưa triển khai chà rửa, đánh giá sạch, thưởng hoặc hoàn tất bát.
+Phạm vi: nạp bát vào máy rửa, chà sạch từng bát bằng chuột, chấm độ sạch, cộng/trừ tiền và cập nhật HUD.
+Chưa có: thắng/thua, bát vỡ, thể lực, âm thanh, hình vẽ thật cho máy rửa trên bản đồ.
 
-## Chạy thử
+## Luật chơi
 
-1. Mở Assets/Scenes/SampleScene.unity, chờ Unity biên dịch, nhấn Play.
-2. Sau khi Unity biên dịch, bộ cấu hình Editor tự thêm PlayerInteractor nếu thiếu và lưu scene.
-3. Dùng WASD đến ô xanh Dishwasher trong khu bếp, nhấn E. Không bắt buộc mang bát ở đợt chuyển màn hình này.
-4. Màn hình DISH WASHING hiện lên, nhân vật dừng, đồng hồ ca tiếp tục chạy.
-5. Nhấn nút BACK TO RESTAURANT hoặc Esc để trở lại màn chơi.
-6. Nhấn E ở máy lần nữa: mở lại bát đã nạp, không lấy thêm bát từ người chơi.
+- Mang bát đến máy rửa (ô xanh trong khu bếp) và nhấn E: toàn bộ bát đang cầm vào máy, màn hình rửa mở ra.
+- Máy trống và tay không thì không mở được màn hình rửa.
+- Giữ chuột trái và di trên đĩa để xoá vết bẩn; miếng bọt biển hiện theo chuột. Chuột đứng yên không làm sạch thêm.
+- Sạch 100% thì bát tự hoàn thành. Bấm XONG hoặc Space để nộp sớm: từ 90% là sạch (+5 tiền), dưới 90% là bẩn (−3 tiền). Bát nộp rồi luôn tính là đã rửa. Tiền không xuống dưới 0.
+- Esc hoặc nút VỀ QUÁN đóng màn hình. Bát đang chà giữ nguyên vết bẩn; nhấn E ở máy để chà tiếp. Đóng màn hình không bao giờ tính là rửa xong.
+- Hết bát trong máy thì màn hình tự đóng sau khoảng 0.8 giây.
+- Đồng hồ ca vẫn chạy trong lúc rửa (Time.timeScale không đổi).
+- "Cần Rửa" trên HUD là số bát đã sinh ra mà chưa rửa xong (trên bàn, đang cầm, trong máy).
 
-Giao diện được tạo khi cần, không phải kéo/gán Canvas. Nếu scene chưa tự cập nhật, dùng Tools > Dish Rushing > Set up dish washing khi không ở Play Mode.
-Máy rửa bát phải có Dishwasher và collider/layer tương tác theo hệ thống sẵn có.
-Không dùng thao tác đóng màn hình để đánh dấu bát sạch.
+## Cấu trúc
 
-## Tích hợp
+| File | Vai trò |
+|---|---|
+| `Assets/Scripts/Washing/DirtMask.cs` | Vết bẩn của một bát: lưới 128×128, sinh vết, xoá theo nét chà, tính % sạch. C# thuần, không cần Play Mode. |
+| `Assets/Scripts/Washing/DishWashingView.cs` | Màn hình rửa: đọc chuột, vẽ vết bẩn, thanh tiến độ, nút XONG / VỀ QUÁN. |
+| `Assets/Resources/DishWashingUI.prefab` | Giao diện uGUI của màn hình rửa, chỉnh được trong Editor. Được nạp bằng `Resources.Load` khi mở lần đầu. Mọi thứ nằm trong khung `Screen` 1280×720 (tỉ lệ 16:9, phần thừa của màn hình được tô tối). |
+| `Assets/Textures/Washing/*.png` | Art pixel của màn hình rửa: nền bồn rửa 320×180 (hiển thị ×4), đĩa 72×72, miếng bọt biển, nút và khung thanh tiến độ. Import: Point, không nén. |
+| `Assets/Scripts/DishWashingMode.cs` | Mở/đóng màn hình, khoá Player, PlayerInteractor và PlayerInput trong lúc rửa. |
+| `Assets/Scripts/Interaction/Dishwasher.cs` | Hàng đợi bát bẩn (`DirtyBowls`), bát đang chà (`CurrentMask`), chấm điểm (`FinishCurrentBowl`). |
+| `Assets/Scripts/Manager/GameManager.cs` | Tiền (`Money`) và số bát cần rửa (`BowlsToWash`), event `Changed`. |
+| `Assets/Scripts/HudStats.cs` | Cập nhật `MoneyTXT` và `NeedWashingTXT` (gắn trên `GameUI`). |
 
-Dishwasher.Interact gọi DishWashingMode.Open(playerInteractor). Nếu đang mang bát và máy còn chỗ, nạp bát trước khi mở; nếu không vẫn mở màn hình xem chế độ rửa.
-DishWashingMode.IsOpen cho biết trạng thái; Close() trở về màn chơi.
-Khi mở, lưu và tạm khóa Player, PlayerInteractor và PlayerInput, dừng Rigidbody2D.
-Khi đóng hoặc scene bị hủy, khôi phục trạng thái trước đó và con trỏ.
-Time.timeScale không thay đổi. PlayerInteractor chặn tương tác và ẩn lời nhắc E khi bị khóa.
-DishLoaded vẫn chỉ phát khi có bát mới được nạp.
+## Chỉnh thông số (Inspector)
+
+- `Dishwasher`: `bowlCapacity` (30), `passRatio` (0.9), `dirtSpots` (4 vết mỗi bát).
+- `GameManager`: `cleanReward` (5), `dirtyPenalty` (3).
+- `DishWashingUI.prefab` → `DishWashingView`: `brushRadius`, `brushStrength`, `brushSpacing` (tính theo ô lưới 128), màu vết bẩn và màu thanh tiến độ.
 
 ## Kiểm tra đã thực hiện
 
-Biên dịch mã bằng trình biên dịch C# và tham chiếu của Unity 6000.3.13f1: thành công.
-Người dùng đã chạy trong Play Mode, cung cấp ảnh màn hình DISH WASHING và xác nhận chạy thử ổn.
+Trong Play Mode trên Unity 6000.3.13f1, Console không có lỗi:
 
-Nhánh bàn giao: feat/dinh-dish-washing. Chưa merge vào develop hoặc main.
+- Logic vết bẩn: cùng seed ra cùng vết, vết luôn nằm trong lòng đĩa, chuột đứng yên không làm sạch thêm, kéo nhanh hay chậm cho cùng kết quả.
+- Nạp 4 bát, chà dở, đóng và mở lại: vẫn là bát cũ với vết bẩn cũ.
+- Sạch hết: tự hoàn thành, +5, sang bát kế. Nộp bát chưa chà: −3. Bấm XONG hai lần trong một frame chỉ tính một bát.
+- Hết bát: màn hình tự đóng, nhân vật điều khiển lại được.
+- Máy đầy: không nhận thêm bát; máy trống và tay không: không mở.
+
+Chưa kiểm tra bằng chuột thật: việc chà được giả lập bằng cách gọi thẳng logic vết bẩn. Cần chơi thử để chắc vị trí chuột khớp với vết bẩn trên đĩa.

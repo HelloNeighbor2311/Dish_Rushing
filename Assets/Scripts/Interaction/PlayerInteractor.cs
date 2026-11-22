@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,6 +45,15 @@ public class PlayerInteractor : MonoBehaviour
             carriedDishVisual.SetActive(false);
         }
     }
+    private void Start()
+    {
+        GameInput.instance.InteractPressed += OnInteractPressed;
+    }
+
+    private void OnInteractPressed()
+    {
+        TryInteract();
+    }
 
     private void Update()
     {
@@ -62,18 +72,6 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (interactPrompt != null) interactPrompt.SetActive(false);
     }
-
-    // Wired to the Player/Interact action on PlayerInput.
-    public void Interact(InputAction.CallbackContext context)
-    {
-        if (!context.performed || DishWashingMode.IsOpen)
-        {
-            return;
-        }
-
-        TryInteract();
-    }
-
     private void TryInteract()
     {
         if (!isActiveAndEnabled || DishWashingMode.IsOpen || lastInteractionFrame == Time.frameCount) return;

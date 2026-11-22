@@ -15,23 +15,20 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        rb.linearVelocity = moveInput*moveSpeed;
-        
-    }
-    public void Move(InputAction.CallbackContext context)
-    {
-        animator.SetBool("isWalking", true);
-        if (context.canceled)
+        moveInput =  GameInput.instance.moveInput;
+        if (moveInput == Vector2.zero)
         {
             animator.SetBool("isWalking", false);
-            animator.SetFloat("LastInputX", moveInput.x);
-            animator.SetFloat("LastInputY", moveInput.y);
+            return;
         }
-        moveInput = context.ReadValue<Vector2>();
+        animator.SetBool("isWalking", true);
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
+        animator.SetFloat("LastInputX", moveInput.x);
+        animator.SetFloat("LastInputY", moveInput.y);
     }
-
-
-
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = GameInput.instance.moveInput*moveSpeed;
+    }
 }

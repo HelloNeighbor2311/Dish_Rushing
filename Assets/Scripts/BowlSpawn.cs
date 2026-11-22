@@ -8,8 +8,6 @@ public class BowlSpawn : MonoBehaviour
     public List<Transform> spawnPositions; 
     public GameObject dishese;
     [SerializeField] private int spawnCount;
-
-
     private void Start()
     {
         StartCoroutine(SpawnBowl());
