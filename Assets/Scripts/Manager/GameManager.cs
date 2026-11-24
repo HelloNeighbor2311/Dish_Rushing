@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public int BrokenBowls { get; private set; }
 
     public event Action Changed;
+    /// <summary>Raised after a bowl is scored; true when it was clean.</summary>
+    public event Action<bool> BowlWashedEvent;
+    /// <summary>Raised with the number of bowls that just broke (never 0).</summary>
+    public event Action<int> BowlBrokenEvent;
 
     private void Awake()
     {
@@ -54,6 +58,7 @@ public class GameManager : MonoBehaviour
         Money = Mathf.Max(0, Money + (clean ? cleanReward : -dirtyPenalty));
         BowlsToWash = Mathf.Max(0, BowlsToWash - 1);
         Changed?.Invoke();
+        BowlWashedEvent?.Invoke(clean);
         return Money - before;
     }
 
@@ -67,6 +72,7 @@ public class GameManager : MonoBehaviour
         // Broken bowls leave the unwashed inventory, keeping HUD counts consistent.
         BowlsToWash = Mathf.Max(0, BowlsToWash - count);
         Changed?.Invoke();
+        BowlBrokenEvent?.Invoke(count);
     }
     public void PauseUnpauseGame()
     {
