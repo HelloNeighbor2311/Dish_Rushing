@@ -120,8 +120,14 @@ public sealed class CustomerController : MonoBehaviour
             }
             if (blocked) yield return new WaitForSeconds(1f);
         }
-        if (visitPool != null) visitPool.Despawn(gameObject);
-        else Destroy(gameObject); // Standalone visitors created outside a spawner.
+        if (!TryReturnToPool()) Destroy(gameObject); // Standalone visitor.
+    }
+
+    internal bool TryReturnToPool()
+    {
+        if (visitPool == null) return false;
+        visitPool.Despawn(gameObject);
+        return true;
     }
 
     private IEnumerator WalkTo(Vector2 destination)
