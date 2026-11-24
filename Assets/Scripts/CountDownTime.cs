@@ -18,6 +18,7 @@ public class CountDownTime : MonoBehaviour
     public Color dangerColor = new Color32(240, 68, 68, 255);
 
     private bool isRunning = true;
+    public event System.Action Finished;
 
     void Start()
     {
@@ -84,6 +85,7 @@ public class CountDownTime : MonoBehaviour
     void GameOver()
     {
         timerText.text = "00:00";
+        Finished?.Invoke();
         Debug.Log("HẾT THỜI GIAN!");
     }
 }
