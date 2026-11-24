@@ -19,6 +19,12 @@ public sealed class CustomerSpawner : MonoBehaviour
     [SerializeField, Min(0.1f)] private float spawnInterval = 5f;
     [SerializeField] private CountDownTime shiftClock;
     private readonly List<SimplePool2.Pool> pools = new List<SimplePool2.Pool>();
+    private bool held;
+
+    /// <summary>Delays customer visits until Release. Call before Start (e.g. from another Awake).</summary>
+    public void Hold() { held = true; }
+
+    public void Release() { held = false; }
 
     private IEnumerator Start()
     {
@@ -36,6 +42,7 @@ public sealed class CustomerSpawner : MonoBehaviour
             pools[i].Preload(Mathf.Max(0, target - pools[i].StackCount), transform);
         }
 
+        while (held) yield return null;
         while (true)
         {
             SpawnIfSeatAvailable();

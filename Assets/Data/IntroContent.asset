@@ -1,0 +1,395 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77806be961bdeeb4c8c6904b2d094673, type: 3}
+  m_Name: IntroContent
+  m_EditorClassIdentifier: Assembly-CSharp::IntroContentSO
+  characters:
+  - key: vanh
+    displayName: Vanh
+    portrait: {fileID: 6505053252969506717, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+    idleFrames:
+    - {fileID: 6505053252969506717, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+    - {fileID: 7516373942590994812, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+    - {fileID: 171325868670753867, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+    - {fileID: -5285807813404960280, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+    - {fileID: 5917599537967390314, guid: 8fc41c11f7c04f14d8b390de5e3259fa, type: 3}
+  - key: linh
+    displayName: "Ch\u1ECB Linh"
+    portrait: {fileID: 8598218815678012885, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+    idleFrames:
+    - {fileID: 8598218815678012885, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+    - {fileID: 2611811710657893710, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+    - {fileID: 4499859319278876962, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+    - {fileID: 630592002536708562, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+    - {fileID: -8975018346010219357, guid: 7aab6d9d2a2ac6745b0b6a1042d8efbd, type: 3}
+  - key: owner
+    displayName: "B\xE0 ch\u1EE7"
+    portrait: {fileID: -5865535658389170615, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+    idleFrames:
+    - {fileID: -5865535658389170615, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+    - {fileID: -96009381174349624, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+    - {fileID: 5675480938021159596, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+    - {fileID: 6615003376055956350, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+    - {fileID: -8337803604880632868, guid: 55bab8036c8cbac45abed35943450ec1, type: 3}
+  - key: chef
+    displayName: "Ch\xFA T\u01B0"
+    portrait: {fileID: -288543805245066851, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+    idleFrames:
+    - {fileID: -288543805245066851, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+    - {fileID: -1061490534824920494, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+    - {fileID: -8839449600597497316, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+    - {fileID: -6362350229792601971, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+    - {fileID: 6450799758891733903, guid: a2d6ca976630ac44a83a10588f3eec0b, type: 3}
+  scenes:
+  - title: "H\xC0 N\u1ED8I, M\xD9A NH\u1EACP H\u1ECCC"
+    background: {fileID: 21300000, guid: 5df99e53b6684534383c582f806be9b3, type: 3}
+    actorsOnStage: []
+    lines:
+    - speakerKey: narrator
+      text: "H\xE0 N\u1ED9i, nh\u1EEFng n\u0103m 2000. M\xF9a thu. L\xE1 v\xE0ng
+        r\u01A1i, hoa s\u1EEFa th\u01A1m\u2026 v\xE0 sinh vi\xEAn t\u1EC9nh l\u1EBB
+        \u0111\u1ED5 v\u1EC1 nh\u01B0 n\u01B0\u1EDBc."
+      effect: 4
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "Trong d\xF2ng ng\u01B0\u1EDDi \u1EA5y c\xF3 m\u1ED9t ch\xE0ng trai.
+        H\xE0nh trang g\u1ED3m: m\u1ED9t ba l\xF4, m\u1ED9t n\u1ED3i c\u01A1m \u0111i\u1EC7n
+        c\u1EE7a m\u1EB9, v\xE0 m\u1ED9t \u01B0\u1EDBc m\u01A1."
+      effect: 0
+      actorKey: vanh
+      move: 1
+    - speakerKey: vanh
+      text: "H\xE0 N\u1ED9i \u01A1i, Vanh \u0111\u1EBFn r\u1ED3i \u0111\xE2y! T\u1EEB
+        nay m\xECnh s\u1EBD t\u1EF1 l\u1EADp, t\u1EF1 n\u1EA5u \u0103n, t\u1EF1 gi\u1EB7t
+        \u0111\u1ED3\u2026"
+      effect: 0
+      actorKey: vanh
+      move: 4
+    - speakerKey: vanh
+      text: "\u2026t\u1EF1 g\u1ECDi v\u1EC1 nh\xE0 xin ti\u1EC1n. Nh\u01B0ng l\xE0
+        t\u1EF1 g\u1ECDi! Th\u1EBF c\u0169ng l\xE0 t\u1EF1 l\u1EADp r\u1ED3i."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "\u01AF\u1EDBc m\u01A1 c\u1EE7a Vanh r\u1EA5t \u0111\u01A1n gi\u1EA3n:
+        h\u1ECDc gi\u1ECFi, \u0111i l\xE0m, mua cho m\u1EB9 m\u1ED9t c\xE1i \u0111i\u1EC7n
+        tho\u1EA1i c\xF3 m\xE0n h\xECnh m\xE0u."
+      effect: 0
+      actorKey: 
+      move: 0
+  - title: "PH\xD2NG TR\u1ECC 304, NG\xD5 7 GANG"
+    background: {fileID: 21300000, guid: b6715b58644d6274785ee099a270ea7a, type: 3}
+    actorsOnStage: []
+    lines:
+    - speakerKey: narrator
+      text: "M\u1ED9t tu\u1EA7n sau. Th\u1EF1c t\u1EBF b\u1EAFt \u0111\u1EA7u g\xF5
+        c\u1EEDa. V\xE0 n\xF3 g\xF5 r\u1EA5t to."
+      effect: 1
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "\u0110\u01B0\u1EE3c r\u1ED3i, t\xEDnh l\u1EA1i chi ti\xEAu. Ti\u1EC1n
+        \u0103n c\u1EA3 th\xE1ng m\u1EB9 g\u1EEDi: 300 ngh\xECn. Tr\u1EEB ti\u1EC1n
+        tr\u1ECD chia ba\u2026"
+      effect: 0
+      actorKey: vanh
+      move: 1
+    - speakerKey: vanh
+      text: "\u2026tr\u1EEB th\xF9ng m\xEC t\xF4m, tr\u1EEB ti\u1EC1n photo gi\xE1o
+        tr\xECnh, tr\u1EEB ti\u1EC1n g\u1EEDi xe\u2026 tr\u1EEB c\xE1i qu\u1EA1t
+        h\u1ECFng ph\u1EA3i s\u1EEDa\u2026"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "C\xF2n\u2026 12 ngh\xECn. \u0110\u1EE7 \u0103n m\u1ED9t b\xE1t ph\u1EDF.
+        Kh\xF4ng qu\u1EA9y. Kh\xF4ng tr\xE0 \u0111\xE1."
+      effect: 3
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "Kh\xF4ng sao! M\xEC t\xF4m c\u0169ng l\xE0 th\u1EF1c ph\u1EA9m. M\xEC
+        t\xF4m c\xF3 rau l\xE0 th\xE0nh\u2026 m\xEC t\xF4m c\xF3 rau!"
+      effect: 0
+      actorKey: vanh
+      move: 4
+    - speakerKey: narrator
+      text: "H\xF4m \u0111\xF3, Vanh \u0103n m\xEC t\xF4m l\u1EA7n th\u1EE9 ch\xEDn
+        trong tu\u1EA7n. C\xE1i n\u1ED3i c\u01A1m \u0111i\u1EC7n c\u1EE7a m\u1EB9
+        b\u1EAFt \u0111\u1EA7u th\u1EA5y c\xF4 \u0111\u01A1n."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "Ph\u1EA3i \u0111i l\xE0m th\xEAm th\xF4i. Mai l\xEAn tr\u01B0\u1EDDng
+        xem b\u1EA3ng tin."
+      effect: 0
+      actorKey: 
+      move: 0
+  - title: "C\u1ED4NG TR\u01AF\u1EDCNG"
+    background: {fileID: 21300000, guid: 214f45925854e2244895b22943f60dc3, type: 3}
+    actorsOnStage: []
+    lines:
+    - speakerKey: vanh
+      text: "Gia s\u01B0 to\xE1n l\u1EDBp 12\u2026 c\u1EA7n kinh nghi\u1EC7m 3 n\u0103m.
+        Ph\xE1t t\u1EDD r\u01A1i\u2026 c\u1EA7n xe m\xE1y. B\xE1n h\xE0ng\u2026 c\u1EA7n
+        \"ngo\u1EA1i h\xECnh s\xE1ng\"."
+      effect: 0
+      actorKey: vanh
+      move: 1
+    - speakerKey: vanh
+      text: "Ngo\u1EA1i h\xECnh em s\xE1ng m\xE0\u2026 l\xFAc \u0111\u1EE9ng g\u1EA7n
+        c\u1EEDa s\u1ED5."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "\u0110\xF3 l\xE0 l\xFAc s\u1ED1 ph\u1EADn quy\u1EBFt \u0111\u1ECBnh
+        ra tay. S\u1ED1 ph\u1EADn m\u1EB7c \xE1o xanh mint, c\u01B0\u1EDDi r\u1EA5t
+        t\u01B0\u01A1i, v\xE0 \u0111i r\u1EA5t nhanh."
+      effect: 2
+      actorKey: linh
+      move: 2
+    - speakerKey: linh
+      text: "Em \u01A1i! Em l\xE0 t\xE2n sinh vi\xEAn \u0111\xFAng kh\xF4ng? Nh\xECn
+        m\u1EB7t l\xE0 bi\u1EBFt s\xE1ng s\u1EE7a, c\xF3 t\u01B0\u01A1ng lai!"
+      effect: 0
+      actorKey: linh
+      move: 4
+    - speakerKey: vanh
+      text: "D\u1EA1\u2026 sao ch\u1ECB bi\u1EBFt \u1EA1?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: linh
+      text: "Ch\u1ECB l\xE0 \u0111\xE0n ch\u1ECB kh\xF3a tr\xEAn m\xE0. M\u1EAFt
+        ch\u1ECB nh\xECn ng\u01B0\u1EDDi chu\u1EA9n l\u1EAFm. Em \u0111ang t\xECm
+        vi\u1EC7c l\xE0m th\xEAm ph\u1EA3i kh\xF4ng?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "D\u1EA1 v\xE2ng! Ch\u1ECB c\xF3 bi\u1EBFt ch\u1ED7 n\xE0o c\u1EA7n ng\u01B0\u1EDDi
+        kh\xF4ng \u1EA1?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: linh
+      text: "Ch\u1ECB \u0111ang c\xF3 \u0111\xFAng m\u1ED9t su\u1EA5t. Vi\u1EC7c
+        nh\u1EB9, l\u01B0\u01A1ng cao, m\xF4i tr\u01B0\u1EDDng n\u0103ng \u0111\u1ED9ng,
+        ch\u1EC9 d\xE0nh cho ng\u01B0\u1EDDi c\xF3 duy\xEAn."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "Nh\u1EB9 c\u1EE1 n\xE0o \u1EA1 ch\u1ECB?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: linh
+      text: "Nh\u1EB9 nh\u01B0\u2026 c\xE1i b\xE1t \u1EA5y. L\u01B0\u01A1ng 20 ngh\xECn
+        m\u1ED9t gi\u1EDD. Bao \u0103n. C\xF3 c\u01A1 h\u1ED9i th\u0103ng ti\u1EBFn."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "20 ngh\xECn m\u1ED9t gi\u1EDD! L\xE0m 5 ti\u1EBFng l\xE0 100 ngh\xECn!
+        L\xE0\u2026 8 b\xE1t ph\u1EDF c\xF3 qu\u1EA9y! C\xF3 c\u1EA3 tr\xE0 \u0111\xE1!"
+      effect: 1
+      actorKey: vanh
+      move: 4
+    - speakerKey: linh
+      text: "\u0110\xFAng r\u1ED3i! Em k\xFD v\xE0o \u0111\xE2y cho ch\u1ECB. K\xFD
+        ch\u1ED7 n\xE0y n\xE8, ch\u1ED7 c\xF3 g\u1EA1ch ch\xE2n."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "M\xE0 ch\u1ECB \u01A1i, m\u1EA5y d\xF2ng ch\u1EEF b\xE9 t\xED \u1EDF
+        d\u01B0\u1EDBi l\xE0 g\xEC th\u1EBF \u1EA1? \"Th\u1EED vi\u1EC7c m\u1ED9t
+        th\xE1ng, kh\xF4ng ngh\u1EC9 gi\u1EEFa\u2026\""
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: linh
+      text: "\xD4i ch\u1EEF nh\u1ECF th\u1EBF \u0111\u1ECDc l\xE0m g\xEC cho m\u1ECFi
+        m\u1EAFt! Tin ch\u1ECB \u0111i. Ch\u1ECB c\xF3 bao gi\u1EDD l\u1EEBa ai \u0111\xE2u.
+        H\xF4m nay l\xE0 l\u1EA7n \u0111\u1EA7u\u2026 \xE0 nh\u1EA7m."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "D\u1EA1 em k\xFD lu\xF4n! Ch\u1EEF k\xFD \u0111\u1EB9p nh\u1EA5t \u0111\u1EDDi
+        em \u0111\u1EA5y ch\u1ECB!"
+      effect: 2
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "V\xE0 th\u1EBF l\xE0, b\u1EB1ng m\u1ED9t ch\u1EEF k\xFD c\xF3 c\u1EA3
+        n\xE9t r\u1ED3ng bay, Vanh b\u01B0\u1EDBc v\xE0o con \u0111\u01B0\u1EDDng
+        kh\xF4ng l\u1ED1i tho\xE1t mang t\xEAn\u2026 r\u1EEDa b\xE1t."
+      effect: 4
+      actorKey: 
+      move: 0
+  - title: "TR\u01AF\u1EDAC C\u1EECA QU\xC1N C\u01A0M B\xC0 CH\u1EE6"
+    background: {fileID: 21300000, guid: 8218738ab2db3d74486179908d7f8e54, type: 3}
+    actorsOnStage:
+    - vanh
+    - linh
+    lines:
+    - speakerKey: linh
+      text: "\u0110\u1EBFn r\u1ED3i! Qu\xE1n n\xE0y n\u1ED5i ti\u1EBFng nh\u1EA5t
+        ph\u1ED1, \u0111\xF4ng kh\xE1ch nh\u1EA5t ph\u1ED1, v\xE0\u2026 th\xF4i ch\u1ECB
+        c\xF3 vi\u1EC7c, ch\u1ECB \u0111i tr\u01B0\u1EDBc nh\xE9!"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: linh
+      text: "Ch\xFAc em\u2026 s\u1ED1ng s\xF3t! \xC0 nh\u1EA7m, ch\xFAc em th\xE0nh
+        c\xF4ng!"
+      effect: 0
+      actorKey: linh
+      move: 3
+    - speakerKey: vanh
+      text: "\u01A0 ch\u1ECB \u01A1i\u2026 \"s\u1ED1ng s\xF3t\" l\xE0 sao \u1EA1?
+        Ch\u1ECB \u01A1i?! Ch\u1ECB \u0111i b\u1ED9 m\xE0 sao nhanh th\u1EBF?!"
+      effect: 1
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "Theo th\u1ED1ng k\xEA kh\xF4ng ch\xEDnh th\u1EE9c, ch\u1ECB Linh \u0111\xE3
+        gi\u1EDBi thi\u1EC7u 47 sinh vi\xEAn v\xE0o qu\xE1n n\xE0y."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "Ch\u01B0a ai th\u1EA5y ch\u1ECB quay l\u1EA1i l\u1EA7n th\u1EE9 hai.
+        C\u0169ng ch\u01B0a ai \u0111\xF2i \u0111\u01B0\u1EE3c ti\u1EC1n m\xF4i gi\u1EDBi."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "Kh\xF4ng sao. M\xECnh l\xE0 sinh vi\xEAn, m\xECnh c\xF3 nhi\u1EC7t huy\u1EBFt.
+        Nhi\u1EC7t huy\u1EBFt th\xEC\u2026 kh\xF4ng tr\u1EEB l\u01B0\u01A1ng \u0111\u01B0\u1EE3c.
+        Ch\u1EAFc th\u1EBF."
+      effect: 0
+      actorKey: vanh
+      move: 4
+  - title: "B\xCAN TRONG QU\xC1N"
+    background: {fileID: 21300000, guid: d3ca37356ca9bef47a9b4d62c2dd0e0b, type: 3}
+    actorsOnStage:
+    - vanh
+    lines:
+    - speakerKey: owner
+      text: "C\u1EADu l\xE0 th\u1EB1ng sinh vi\xEAn con Linh g\u1EEDi sang \u0111\u1EA5y
+        \xE0?"
+      effect: 2
+      actorKey: owner
+      move: 2
+    - speakerKey: vanh
+      text: "D-d\u1EA1! Em l\xE0 Vanh \u1EA1. Em r\u1EA5t vui \u0111\u01B0\u1EE3c
+        l\xE0m vi\u1EC7c v\u1EDBi\u2026"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: owner
+      text: "Vui th\xEC \u0111\u1EC3 cu\u1ED1i th\xE1ng. \u0110\u1EE9ng th\u1EB3ng
+        l\xEAn. Tay \u0111\xE2u, \u0111\u01B0a ch\u1ECB xem."
+      effect: 3
+      actorKey: 
+      move: 0
+    - speakerKey: owner
+      text: "Tay n\xE0y r\u1EEDa b\xE1t \u0111\u01B0\u1EE3c. H\u01A1i g\u1EA7y, nh\u01B0ng
+        g\u1EA7y th\xEC \u0111\u1EE1 t\u1ED1n c\u01A1m. Ch\u1ECB n\xF3i c\xF3 sai
+        kh\xF4ng?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "D\u1EA1\u2026 kh\xF4ng sai \u1EA1."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: owner
+      text: "\u1EDE \u0111\xE2y ch\u1ECB coi nh\xE2n vi\xEAn nh\u01B0 con trong nh\xE0."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "\xD4i\u2026 ch\u1ECB t\u1ED1t qu\xE1\u2026"
+      effect: 0
+      actorKey: vanh
+      move: 4
+    - speakerKey: owner
+      text: "\u2026n\xEAn ch\u1ECB m\u1EAFng c\u0169ng nh\u01B0 m\u1EAFng con trong
+        nh\xE0. M\xE0 con ch\u1ECB th\xEC ch\u1ECB m\u1EAFng nhi\u1EC1u l\u1EAFm."
+      effect: 1
+      actorKey: 
+      move: 0
+  - title: "CH\xDA T\u01AF"
+    background: {fileID: 21300000, guid: d3ca37356ca9bef47a9b4d62c2dd0e0b, type: 3}
+    actorsOnStage:
+    - vanh
+    - owner
+    lines:
+    - speakerKey: chef
+      text: "(th\xF2 \u0111\u1EA7u ra t\u1EEB b\u1EBFp) Kh\u1ED5 th\xE2n ch\xE1u\u2026
+        \xC0 kh\xF4ng, ch\xE0o ch\xE1u! Ch\xFA l\xE0 T\u01B0, b\u1EBFp tr\u01B0\u1EDFng
+        \u1EDF \u0111\xE2y."
+      effect: 0
+      actorKey: chef
+      move: 2
+    - speakerKey: chef
+      text: "Ch\xFA l\xE0m \u1EDF \u0111\xE2y 15 n\u0103m r\u1ED3i. H\u1ED3i ch\xFA
+        v\xE0o c\u0169ng \u0111\u01B0\u1EE3c h\u1EE9a \"cu\u1ED1i th\xE1ng t\u0103ng
+        l\u01B0\u01A1ng\"."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: vanh
+      text: "Th\u1EBF ch\xFA \u0111\u01B0\u1EE3c t\u0103ng ch\u01B0a \u1EA1?"
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: chef
+      text: "Ch\u01B0a. Nh\u01B0ng ch\xFA v\u1EABn tin. Th\xE1ng sau l\xE0 th\xE1ng
+        th\u1EE9 181 ch\xFA tin \u0111\u1EA5y."
+      effect: 0
+      actorKey: 
+      move: 0
+    - speakerKey: owner
+      text: "L\xE3o T\u01B0! N\u1ED3i n\u01B0\u1EDBc d\xF9ng s\xF4i tr\xE0o ra r\u1ED3i
+        k\xECa!"
+      effect: 1
+      actorKey: 
+      move: 0
+    - speakerKey: chef
+      text: "\u0110\xE2y \u0111\xE2y! Ch\xE1u c\u1ED1 l\xEAn nh\xE9, \u0111\xF3i
+        th\xEC xu\u1ED1ng b\u1EBFp ch\xFA cho\u2026 nh\u01B0ng \u0111\u1EEBng \u0111\u1EC3
+        b\xE0 \u1EA5y th\u1EA5y."
+      effect: 0
+      actorKey: chef
+      move: 3
+    - speakerKey: owner
+      text: "Th\xF4i, n\xF3i nhi\u1EC1u t\u1ED1n calo. \u0110i theo ch\u1ECB. H\u1ECDc
+        nhanh th\xEC s\u1ED1ng, h\u1ECDc ch\u1EADm th\xEC\u2026 h\u1ECDc l\u1EA1i."
+      effect: 3
+      actorKey: 
+      move: 0
+    - speakerKey: narrator
+      text: "V\xE0 \u0111\xF3 l\xE0 ng\xE0y \u0111\u1EA7u ti\xEAn. Ng\xE0y m\xE0
+        Vanh c\xF2n ngh\u0129 r\u1EEDa b\xE1t\u2026 l\xE0 vi\u1EC7c nh\u1EB9."
+      effect: 4
+      actorKey: 
+      move: 0

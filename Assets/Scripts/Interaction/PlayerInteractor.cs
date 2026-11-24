@@ -29,6 +29,9 @@ public class PlayerInteractor : MonoBehaviour
     private Collider2D currentTarget;
     private Player movement;
 
+    /// <summary>Raised after a dish stack was actually added to the player's hands.</summary>
+    public event Action<DishPickup> DishPicked;
+
     public bool HasDish => carriedDishes.Count > 0;
     public int CarriedBowls { get; private set; }
 
@@ -181,6 +184,7 @@ public class PlayerInteractor : MonoBehaviour
         CarriedBowls += dish.BowlCount;
         Debug.Log(CarriedBowls);
         UpdateCarriedVisual();
+        DishPicked?.Invoke(dish);
     }
 
     // Returns the most recently picked-up dish, or null when empty-handed.
