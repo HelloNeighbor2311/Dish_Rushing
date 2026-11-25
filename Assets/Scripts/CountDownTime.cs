@@ -18,6 +18,15 @@ public class CountDownTime : MonoBehaviour
     public Color dangerColor = new Color32(240, 68, 68, 255);
 
     private bool isRunning = true;
+    private bool held;
+    public event System.Action Finished;
+
+    public float TimeRemaining => timeRemaining;
+
+    /// <summary>Keeps the clock at full time until Release. Call before Start (e.g. from another Awake).</summary>
+    public void Hold() { held = true; }
+
+    public void Release() { held = false; }
 
     void Start()
     {
@@ -27,7 +36,7 @@ public class CountDownTime : MonoBehaviour
 
     void Update()
     {
-        if (!isRunning)
+        if (!isRunning || held)
             return;
 
         if (timeRemaining > 0)
@@ -84,6 +93,7 @@ public class CountDownTime : MonoBehaviour
     void GameOver()
     {
         timerText.text = "00:00";
+        Finished?.Invoke();
         Debug.Log("HẾT THỜI GIAN!");
     }
 }
