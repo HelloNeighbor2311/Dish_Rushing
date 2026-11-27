@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseUI : MonoBehaviour
 {
@@ -11,6 +12,38 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private Button ExitBtn;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject exitConfirmationPanel;
+    private CanvasGroup pauseCanvasGroup;
+    private CursorLockMode previousCursorLockState;
+    private bool previousCursorVisible;
+    private bool cursorStateCaptured;
+
+    private void Awake()
+    {
+        pauseCanvasGroup = GetComponent<CanvasGroup>();
+        if (pauseCanvasGroup == null)
+            pauseCanvasGroup = gameObject.AddComponent<CanvasGroup>();
+
+        SetPauseMenuVisible(false);
+
+        if (pauseButton != null)
+            pauseButton.onClick.AddListener(PauseGame);
+        if (continueBtn != null)
+            continueBtn.onClick.AddListener(ResumeGame);
+        if (settingBtn != null)
+            settingBtn.onClick.AddListener(OpenSettings);
+        if (ExitBtn != null)
+            ExitBtn.onClick.AddListener(ShowExitConfirmation);
+
+        if (exitConfirmationPanel != null)
+        {
+            Button cancelButton = exitConfirmationPanel.transform.Find("CancelButton")?.GetComponent<Button>();
+            Button confirmButton = exitConfirmationPanel.transform.Find("ConfirmButton")?.GetComponent<Button>();
+            if (cancelButton != null && cancelButton.onClick.GetPersistentEventCount() == 0)
+                cancelButton.onClick.AddListener(CancelExit);
+            if (confirmButton != null && confirmButton.onClick.GetPersistentEventCount() == 0)
+                confirmButton.onClick.AddListener(ConfirmExit);
+        }
+    }
 
     private void Start()
     {
@@ -24,30 +57,52 @@ public class PauseUI : MonoBehaviour
         GameManager.Instance.onGameUnPause += OnGameUnPaused;
 
         StylePauseMenu();
+    }
 
-        if (pauseButton != null)
-            pauseButton.onClick.AddListener(PauseGame);
-        Hide();
-        continueBtn.onClick.AddListener(() =>
-        {
-            GameManager.Instance.PauseUnpauseGame();
-            InputModeManager.instance.SwitchMode();
-        });
-        ExitBtn.onClick.AddListener(() =>
-        {
-            ShowExitConfirmation();
+    private void Update()
+    {
+        // Keep the HUD pause icon usable even if PlayerInput has disabled the
+        // UI action map after returning to gameplay.
+        if (pauseButton == null || !pauseButton.gameObject.activeInHierarchy ||
+            !pauseButton.interactable || Time.timeScale <= 0f)
+            return;
 
-        });
-        settingBtn.onClick.AddListener(() =>
-        {
-           OpenSettings(); 
-        });
+        Mouse mouse = Mouse.current;
+        if (mouse == null || !mouse.leftButton.wasPressedThisFrame)
+            return;
+
+        RectTransform buttonRect = pauseButton.transform as RectTransform;
+        if (buttonRect == null) return;
+
+        Canvas canvas = pauseButton.GetComponentInParent<Canvas>();
+        Camera eventCamera = canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay
+            ? canvas.worldCamera
+            : null;
+        if (RectTransformUtility.RectangleContainsScreenPoint(
+                buttonRect, mouse.position.ReadValue(), eventCamera))
+            PauseGame();
     }
 
     private void OnDestroy()
     {
         if (pauseButton != null)
             pauseButton.onClick.RemoveListener(PauseGame);
+        if (continueBtn != null)
+            continueBtn.onClick.RemoveListener(ResumeGame);
+        if (settingBtn != null)
+            settingBtn.onClick.RemoveListener(OpenSettings);
+        if (ExitBtn != null)
+            ExitBtn.onClick.RemoveListener(ShowExitConfirmation);
+
+        if (exitConfirmationPanel != null)
+        {
+            Button cancelButton = exitConfirmationPanel.transform.Find("CancelButton")?.GetComponent<Button>();
+            Button confirmButton = exitConfirmationPanel.transform.Find("ConfirmButton")?.GetComponent<Button>();
+            if (cancelButton != null && cancelButton.onClick.GetPersistentEventCount() == 0)
+                cancelButton.onClick.RemoveListener(CancelExit);
+            if (confirmButton != null && confirmButton.onClick.GetPersistentEventCount() == 0)
+                confirmButton.onClick.RemoveListener(ConfirmExit);
+        }
 
         if (GameManager.Instance != null)
         {
@@ -60,6 +115,12 @@ public class PauseUI : MonoBehaviour
     {
         if (GameManager.Instance != null && Time.timeScale > 0f)
             GameManager.Instance.PauseGame();
+    }
+
+    private void ResumeGame()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.UnPauseGame();
     }
 
     private void StylePauseMenu()
@@ -249,35 +310,57 @@ public class PauseUI : MonoBehaviour
     
     private void OnGameUnPaused()
     {
-        Hide();
+        if (InputModeManager.instance != null)
+            InputModeManager.instance.EnterGameplayMode();
+        if (cursorStateCaptured)
+        {
+            Cursor.lockState = previousCursorLockState;
+            Cursor.visible = previousCursorVisible;
+            cursorStateCaptured = false;
+        }
+        SetPauseMenuVisible(false);
     }
 
     private void OnGamePaused()
     {
-        Show();
+        if (InputModeManager.instance != null)
+            InputModeManager.instance.EnterUIMode();
+        previousCursorLockState = Cursor.lockState;
+        previousCursorVisible = Cursor.visible;
+        cursorStateCaptured = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SetPauseMenuVisible(true);
     }
-    private void Show()
+
+    private void SetPauseMenuVisible(bool visible)
     {
-        gameObject.SetActive(true);
-    }
-    private void Hide()
-    {
-        gameObject.SetActive(false);
+        if (pauseCanvasGroup == null)
+            pauseCanvasGroup = GetComponent<CanvasGroup>();
+        if (pauseCanvasGroup == null) return;
+
+        pauseCanvasGroup.alpha = visible ? 1f : 0f;
+        pauseCanvasGroup.interactable = visible;
+        pauseCanvasGroup.blocksRaycasts = visible;
     }
     public void OpenSettings()
     {
+        if (settingsPanel == null) return;
         settingsPanel.SetActive(true);
+        settingsPanel.transform.SetAsLastSibling();
     }
 
     // Quay lại Pause Menu
     public void BackFromSettings()
     {
         settingsPanel.SetActive(false);
-        Show();
+        SetPauseMenuVisible(true);
     }
     private void ShowExitConfirmation()
     {
+        if (exitConfirmationPanel == null) return;
         exitConfirmationPanel.SetActive(true);
+        exitConfirmationPanel.transform.SetAsLastSibling();
     }
 
     public void CancelExit()
@@ -288,6 +371,8 @@ public class PauseUI : MonoBehaviour
     public void ConfirmExit()
     {
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneLoader.LoadScene(SceneLoader.SceneEnum.MainMenu);
     }
 }

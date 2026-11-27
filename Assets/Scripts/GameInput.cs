@@ -25,6 +25,7 @@ public class GameInput : MonoBehaviour
     {
         if (playerInput != null)
             playerInput.onActionTriggered -= HandlePlayerInput;
+        moveInput = Vector2.zero;
     }
     private void HandlePlayerInput(InputAction.CallbackContext context)
     {

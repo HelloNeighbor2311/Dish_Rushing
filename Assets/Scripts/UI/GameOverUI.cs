@@ -24,6 +24,8 @@ public sealed class GameOverUI : MonoBehaviour
     private TMP_FontAsset uiFont;
     private TMP_Text titleText;
     private TMP_Text summaryText;
+    private TMP_Text nextLevelNotice;
+    private Button nextLevelButton;
     private AudioSource resultAudio;
     private AudioClip winClip;
     private AudioClip loseClip;
@@ -106,7 +108,12 @@ public sealed class GameOverUI : MonoBehaviour
     private void EndShift(bool won, FailureReason failureReason)
     {
         isGameOver = true;
+        DishWashingMode.CloseCurrent();
         Time.timeScale = 0f;
+        if (InputModeManager.instance != null)
+            InputModeManager.instance.EnterUIMode();
+        if (GameInput.instance != null)
+            GameInput.instance.enabled = false;
         titleText.text = won ? "SHIFT COMPLETED!" : "SHIFT FAILED";
         titleText.color = won ? new Color32(54, 126, 73, 255) : new Color32(177, 57, 43, 255);
         string reasonLine = failureReason switch
@@ -119,6 +126,8 @@ public sealed class GameOverUI : MonoBehaviour
                            $"Bowls completed: {cleanBowls}/{requiredCleanBowls}\n" +
                            $"Bowls broken: {GameManager.Instance.BrokenBowls}/{allowedBrokenBowls}\n" +
                            $"Money earned after bonuses and penalties: {GameManager.Instance.Money}";
+        nextLevelButton.gameObject.SetActive(won);
+        nextLevelNotice.gameObject.SetActive(false);
         overlay.SetActive(true);
         if (won)
         {
@@ -165,14 +174,14 @@ public sealed class GameOverUI : MonoBehaviour
         fireworkSprite = CreateFireworkSprite();
 
         var card = MakeRect("ResultCard", overlay.transform, new Vector2(0.5f, 0.5f),
-            new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(680, 520));
+            new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(680, 560));
         MakeImage(card.gameObject, new Color32(255, 246, 224, 255));
 
         titleText = MakeText("ResultTitle", card, new Vector2(0.08f, 0.74f),
             new Vector2(0.92f, 0.92f), "SHIFT RESULTS", 46, new Color32(117, 64, 37, 255),
             FontStyles.Bold);
-        summaryText = MakeText("ResultSummary", card, new Vector2(0.12f, 0.32f),
-            new Vector2(0.88f, 0.71f), string.Empty, 26, new Color32(67, 57, 47, 255),
+        summaryText = MakeText("ResultSummary", card, new Vector2(0.12f, 0.40f),
+            new Vector2(0.88f, 0.71f), string.Empty, 25, new Color32(67, 57, 47, 255),
             FontStyles.Normal);
         summaryText.alignment = TextAlignmentOptions.Center;
 
@@ -180,7 +189,21 @@ public sealed class GameOverUI : MonoBehaviour
             new Vector2(0.48f, 0.29f), new Color32(65, 133, 78, 255), RestartGame);
         MakeButton(card, "MainMenuButton", "MAIN MENU", new Vector2(0.52f, 0.12f),
             new Vector2(0.92f, 0.29f), new Color32(177, 78, 54, 255), ReturnToMenu);
+        nextLevelButton = MakeButton(card, "NextLevelButton", "NEXT LEVEL",
+            new Vector2(0.25f, 0.30f), new Vector2(0.75f, 0.40f),
+            new Color32(64, 119, 174, 255), ShowNextLevelNotice);
+        nextLevelButton.gameObject.SetActive(false);
+        nextLevelNotice = MakeText("NextLevelNotice", card, new Vector2(0.08f, 0.025f),
+            new Vector2(0.92f, 0.095f), "No next level is available yet.", 18,
+            new Color32(117, 64, 37, 255), FontStyles.Bold);
+        nextLevelNotice.gameObject.SetActive(false);
         overlay.SetActive(false);
+    }
+
+    private void ShowNextLevelNotice()
+    {
+        if (nextLevelNotice != null)
+            nextLevelNotice.gameObject.SetActive(true);
     }
 
     private static RectTransform MakeRect(string name, Transform parent, Vector2 anchorMin,
@@ -328,7 +351,7 @@ public sealed class GameOverUI : MonoBehaviour
         return text;
     }
 
-    private void MakeButton(Transform parent, string name, string label,
+    private Button MakeButton(Transform parent, string name, string label,
         Vector2 anchorMin, Vector2 anchorMax, Color color, UnityEngine.Events.UnityAction action)
     {
         var rect = MakeRect(name, parent, anchorMin, anchorMax, Vector2.zero, Vector2.zero);
@@ -339,6 +362,7 @@ public sealed class GameOverUI : MonoBehaviour
         var text = MakeText("Label", rect, Vector2.zero, Vector2.one, label, 26,
             Color.white, FontStyles.Bold);
         text.raycastTarget = false;
+        return button;
     }
 
     private static void RestartGame()
